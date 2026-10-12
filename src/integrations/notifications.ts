@@ -20,8 +20,8 @@ export async function requestNotificationPermission(): Promise<NotifySupport> {
 async function show(title: string, body: string) {
   if (notificationSupport() !== 'granted') return;
   const reg = await navigator.serviceWorker?.getRegistration().catch(() => undefined);
-  if (reg) await reg.showNotification(title, { body, icon: '/pwa-192.png', tag: title });
-  else new Notification(title, { body, icon: '/pwa-192.png' });
+  if (reg) await reg.showNotification(title, { body, icon: 'pwa-192.png', tag: title });
+  else new Notification(title, { body, icon: 'pwa-192.png' });
 }
 
 const hm = (d: Date) => `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;

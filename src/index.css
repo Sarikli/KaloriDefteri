@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Yerleşim: mobilde tek sütun + alt menü; geniş ekranda sol menü + iki sütunlu Bugün ekranı.
+   Renk belirteçleri RGB üçlüsü olarak tutulur (Tailwind alpha desteği için). */
+:root {
+  --bg: 244 247 246;
+  --surface: 255 255 255;
+  --sunk: 236 242 240;
+  --ink: 22 33 31;
+  --muted: 92 108 105;
+  --line: 220 228 226;
+  --teal: 14 147 132;
+  --teal-soft: 214 241 236;
+  --leaf: 61 138 74;
+  --leaf-soft: 223 240 221;
+  --warn: 190 120 10;
+  --danger: 196 60 48;
+  --pro: 47 118 200;
+  --carb: 214 150 24;
+  --fat: 194 85 122;
+  --water: 38 140 214;
+  --coffee: 120 82 56;
+  --tea: 190 108 46;
+  --shadow: 16 40 36;
+  --bv1: #2a78d6;
+  --bv2: #eb6834;
+  --bv3: #1baf7a;
+  --bv4: #eda100;
+  --bv5: #e87ba4;
+  --bv6: #008300;
+  --bv7: #4a3aa7;
+  --bv8: #e34948;
+  --chart-grid: 220 228 226;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: 12 19 18;
+    --surface: 21 30 29;
+    --sunk: 16 24 23;
+    --ink: 228 237 235;
+    --muted: 148 165 161;
+    --line: 40 54 52;
+    --teal: 46 196 176;
+    --teal-soft: 17 58 53;
+    --leaf: 112 190 122;
+    --leaf-soft: 24 52 30;
+    --warn: 232 172 64;
+    --danger: 240 112 96;
+    --pro: 74 138 224;
+    --carb: 201 133 0;
+    --fat: 208 98 140;
+    --water: 92 172 240;
+    --coffee: 196 146 112;
+    --tea: 226 152 92;
+    --shadow: 0 0 0;
+    --bv1: #3987e5;
+    --bv2: #d95926;
+    --bv3: #199e70;
+    --bv4: #c98500;
+    --bv5: #d55181;
+    --bv6: #008300;
+    --bv7: #9085e9;
+    --bv8: #e66767;
+    --chart-grid: 40 54 52;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --bg: 12 19 18;
+  --surface: 21 30 29;
+  --sunk: 16 24 23;
+  --ink: 228 237 235;
+  --muted: 148 165 161;
+  --line: 40 54 52;
+  --teal: 46 196 176;
+  --teal-soft: 17 58 53;
+  --leaf: 112 190 122;
+  --leaf-soft: 24 52 30;
+  --warn: 232 172 64;
+  --danger: 240 112 96;
+  --pro: 74 138 224;
+  --carb: 201 133 0;
+  --fat: 208 98 140;
+  --water: 92 172 240;
+  --coffee: 196 146 112;
+  --tea: 226 152 92;
+  --shadow: 0 0 0;
+  --bv1: #3987e5;
+  --bv2: #d95926;
+  --bv3: #199e70;
+  --bv4: #c98500;
+  --bv5: #d55181;
+  --bv6: #008300;
+  --bv7: #9085e9;
+  --bv8: #e66767;
+  --chart-grid: 40 54 52;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--ink));
+  font-family: 'Figtree Variable', 'Figtree', system-ui, sans-serif;
+  font-size: 15px;
+  -webkit-tap-highlight-color: transparent;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
+  text-wrap: balance;
+}
+.num {
+  font-variant-numeric: tabular-nums;
+}
+:focus-visible {
+  outline: 2px solid rgb(var(--teal));
+  outline-offset: 2px;
+}
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+@keyframes sheet-in {
+  from {
+    transform: translateY(24px);
+    opacity: 0.6;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.anim-sheet {
+  animation: sheet-in 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.anim-fade {
+  animation: fade-in 0.18s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,6 +1,6 @@
 # KaloriDefteri
 
-Türk mutfağı odaklı, çevrimdışı çalışan kalori, içecek, kafein, aktivite ve kilo takip uygulaması (PWA).
+Çevrimdışı çalışan kalori, içecek, kafein, aktivite ve kilo takip uygulaması (PWA).
 Üyelik yok; tüm veriler cihazda (IndexedDB) saklanır.
 
 ## Kurulum ve çalıştırma

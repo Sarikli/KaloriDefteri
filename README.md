@@ -5,6 +5,8 @@
 
 ## Kurulum ve çalıştırma
 
+Mevcut hazır site: https://kaloridefter.netlify.app/
+
 Gereksinim: Node.js 20+.
 
 ```bash
